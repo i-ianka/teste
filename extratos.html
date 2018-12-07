@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+</head>
+<body>
+   
+     <div class="bg-d">
+    <a class="navbar-brand" href="index.html">  <img src="img/logo-branco.png" class="logo-menu-2" href="#"></a>
+  
+        <div id="menu-hamburger" id="sidebarToggle" class="btn btn-link btn-sm text-white order-1 order-sm-0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div> 
+ 
+    </div> 
+ 
+  <div id="wrapper">
+  
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+       
+            <li class="nav-item active">
+            <a class="nav-link" href="index.html">
+             <span>Olá</span> <span id="nomeUsuario">Palloma </span>  <span id="sobrenomeUsuario">Adolfi</span>
+            </a>
+          </li>
+        
+          <li class="nav-item">
+                <a class="nav-link" href="">
+                  <span> <img src="img/menu-home.png" class="menu-icones"/> Inicio</span></a>
+              </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span>  <img src="img/menu-saldo.png" class="menu-icones"/> Saldo disponível</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+              <h6 class="dropdown-header">Login Screens:</h6>
+              <a class="dropdown-item" href="login.html">Login</a>
+              <a class="dropdown-item" href="register.html">Register</a>
+              <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Other Pages:</h6>
+              <a class="dropdown-item" href="404.html">404 Page</a>
+              <a class="dropdown-item" href="blank.html">Blank Page</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <span> <img src="img/menu-transferencia.png" class="menu-icones"/> Transferências</span></a><img src="img/menu-transferencia.png" class="menu-icones-2"  /> </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <span>  <img src="img/menu-extrato.png" class="menu-icones"/>  Extratos</span></a>
+          </li>
+
+          <li class="nav-item">
+                <a class="nav-link" href="">
+                  <span>  <img src="img/menu-alterar-cadastro.png" class="menu-icones"/>  Alterar dados      cadastrais</span></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="">
+                  <span> <img src="img/sair.png" class="menu-icones"/>  Sair</span></a>
+              </li>
+
+        </ul>
+  
+        <div id="content-wrapper">
+  
+          <div class="container-fluid">
+  
+           
+          
+          
+        
+            <div class="container-fluid mt-4">
+              <div class="row justify-content-center">
+              <div class="col-auto mb-3">
+                 <div class="card  card-dados" id="pagina1" >
+                   <div class="card-body">
+                      <span>
+                          <h3>
+                          <img src="img/voltar.png" class="indicadores"/>
+                          <img src="img/extrato.png" class="titulos-icones"/>
+                          Extratos</h3>
+                          </span>  <hr>
+
+
+                          <!-- ESCOLHA DO TIPO DE CONTA -->
+
+                          <div class="container-1 ">
+                            <div class="box-1">
+                            <button type="button" id="todosConta"  checked class="btn btn-extrato">Todos</button>
+                            <input type="checkbox" checked id="left-item" hidden class="hidden">
+                            </div>
+
+
+                            <div class="box-2">
+                            <button type="button" id="todosDebito" class="btn btn-extrato">Débito</button>
+                            <input type="checkbox" id="left-item" hidden class="hidden">
+                            </div>
+
+                            <div class="box-2">
+                            <button type="button"  id="todosCredito" class="btn btn-extrato ">Crédito</button>
+                            <input type="checkbox" id="left-item" hidden class="hidden">
+                            </div>
+                          </div>
+                           <br>
+
+                          <!-- SALDO -->
+                          <div class="container-1  container-saldo">
+                              <div class="box-1">
+                                <p>Agência/Conta</p>
+                                <p id="conta">2926/00353185</p>
+                              </div>
+  
+  
+                              <div class="box-2">
+                                <p>Saldo Disponível (R$)</p>
+                                <p id="saldo">3.000,08</p>
+                              </div>
+  
+                              <div class="box-2">
+                                  <p>Saldo Total (R$)</p>
+                                  <p id="saldo">3.000,08</p>
+                              </div>
+                            </div>
+
+
+
+                    <!--  FILTRO- TODOS | TIPO DE FUNÇÃO DA CONTA=(DEBITO OU CRÉDITO) -->
+                            <div class="container-1  ">
+                                <div class="box-1">
+                                
+                                    <div id="accordion">
+                                        <div class="card">
+                                          <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                  <img src="img/selecionar-extrato.png" class="menu-icones"/>   Mostrar extrato por data específica
+                                              </button>
+                                            </h5>
+                                          </div>
+                                      
+                                          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                            <div class="card-body">
+
+                                                <div class="container">
+                                                   <table class="table">
+                                                      <thead>
+                                                        <tr>
+                                                          <th>Data</th>
+                                                          <th>Lançamento</th>
+                                                          <th> Dcto.</th>
+                                                          <th>Crédito(R$)</th>
+                                                          <th>Débito(R$)</th>
+                                                          <th>Saldo</th>
+                                                        </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                        <tr class="active">
+                                                          <td>08/12/2018</td>
+                                                          <td>Transf CC para PJ
+                                                              ASE  Escritório</td>
+                                                              <td>1243546</td>
+                                                              <td>300,00</td>
+                                                              <td>.</td>
+                                                              <td>3.300,08</td>
+
+                                                        </tr>
+                                                        <tr>
+                                                          <td>09/12/2018</td>
+                                                          <td>Mora Capital
+                                                              de giro</td>
+                                                              <td>6578903</td>
+                                                              <td>.</td>
+                                                              <td>-300,00</td>
+                                                              <td>3.000,08</td>
+                                                        </tr>
+                                                        <tr>
+
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </div>
+                                             </div>
+                                          </div>
+                                        </div>
+
+
+
+                          <!--  FILTRO- DEBITO | TIPO DE FUNÇÃO DA CONTA=(DEBITO OU CRÉDITO) -->
+                          <div class="container-1  ">
+                              <div class="box-1">
+                              
+                                  <div id="accordion">
+                                      <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                          <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <img src="img/selecionar-extrato.png" class="menu-icones"/>   Mostrar extrato por data específica
+                                            </button>
+                                          </h5>
+                                        </div>
+                                    
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                          <div class="card-body">
+
+                                              <div class="container">
+                                                 <table class="table">
+                                                    <thead>
+                                                      <tr>
+                                                        <th>Data</th>
+                                                        <th>Lançamento</th>
+                                                        <th> Dcto.</th>
+                                                        <th>Crédito(R$)</th>
+                                                        <th>Débito(R$)</th>
+                                                        <th>Saldo</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr class="active">
+                                                        <td>08/12/2018</td>
+                                                        <td>Transf CC para PJ
+                                                            ASE  Escritório</td>
+                                                            <td>1243546</td>
+                                                            <td>300,00</td>
+                                                            <td>.</td>
+                                                            <td>3.300,08</td>
+
+                                                      </tr>
+                                                      <tr>
+                                                        <td>09/12/2018</td>
+                                                        <td>Mora Capital
+                                                            de giro</td>
+                                                            <td>6578903</td>
+                                                            <td>.</td>
+                                                            <td>-300,00</td>
+                                                            <td>3.000,08</td>
+                                                      </tr>
+                                                      <tr>
+
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </div>
+                                           </div>
+                                        </div>
+                                      </div>
+
+
+
+
+                                      
+                          <!--  FILTRO-CREDITO | TIPO DE FUNÇÃO DA CONTA=(DEBITO OU CRÉDITO) -->
+                          <div class="container-1  ">
+                            <div class="box-1">
+                            
+                                <div id="accordion">
+                                    <div class="card">
+                                      <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                              <img src="img/selecionar-extrato.png" class="menu-icones"/>   Mostrar extrato por data específica
+                                          </button>
+                                        </h5>
+                                      </div>
+                                  
+                                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+
+                                            <div class="container">
+                                               <table class="table">
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Data</th>
+                                                      <th>Lançamento</th>
+                                                      <th> Dcto.</th>
+                                                      <th>Crédito(R$)</th>
+                                                      <th>Débito(R$)</th>
+                                                      <th>Saldo</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr class="active">
+                                                      <td>08/12/2018</td>
+                                                      <td>Transf CC para PJ
+                                                          ASE  Escritório</td>
+                                                          <td>1243546</td>
+                                                          <td>300,00</td>
+                                                          <td>.</td>
+                                                          <td>3.300,08</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                      <td>09/12/2018</td>
+                                                      <td>Mora Capital
+                                                          de giro</td>
+                                                          <td>6578903</td>
+                                                          <td>.</td>
+                                                          <td>-300,00</td>
+                                                          <td>3.000,08</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                         </div>
+                                      </div>
+                                    </div>
+
+
+                            
+
+                                        
+
+
+                                        
+
+                                        <div class="card">
+                                          <div class="card-header" id="headingTwo">
+                                            <h5 class="mb-0">
+                                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                  <img src="img/extrato-5.png" class="menu-icones"/>    Extrato dos últimos 5 dias
+                                              </button>
+                                            </h5>
+                                          </div>
+                                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                            <div class="card-body">
+                                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                              <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <img src="img/extrato-30.png" class="menu-icones"/>   Extrato dos últimos 30 dias
+                                                </button>
+                                              </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                              <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+                                        <div class="card">
+                                          <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                  <img src="img/extrato-60.png" class="menu-icones"/>  Extrato dos últimos 60 dias  
+                                              </button>
+                                            </h5>
+                                          </div>
+                                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                            <div class="card-body">
+                                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+                                </div>
+                                </div>
+    
+
+
+
+
+
+
+
+
+
+
+                  </div>
+                  </div>
+              </div>
+              </div>
+               
+   
+  
+          </div>
+          <!-- /.container-fluid -->
+  
+          <!-- Sticky Footer -->
+          <!-- <footer class="footer">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright © Your Website 2018</span>
+              </div>
+            </div>
+          </footer> -->
+  
+        </div>
+        <!-- /.content-wrapper -->
+  
+      </div>
+      <!-- /#wrapper -->
+  
+
+  <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+    
+      <script src="js/javascript.js"></script>
+    
+</body>
+</html>
